@@ -14,7 +14,7 @@ jobs:
 
       - name: Build APK using Kivy Docker image
         run: |
-          docker run --rm -v "$(pwd)":/home/user/hostcwd kivy/buildozer android debug
+          yes | docker run --rm -i -v "$(pwd)":/home/user/hostcwd kivy/buildozer android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
